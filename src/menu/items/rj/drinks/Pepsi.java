@@ -1,5 +1,6 @@
-package menu.items.rj;
+package menu.items.rj.drinks;
 
+import menu.items.rj.Drink;
 
 public class Pepsi extends Drink {
 	public Pepsi(String size){

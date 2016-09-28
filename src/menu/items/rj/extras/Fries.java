@@ -1,6 +1,8 @@
-package menu.items.rj;
+package menu.items.rj.extras;
 
 import java.math.BigDecimal;
+
+import menu.items.rj.Extra;
 
 public class Fries extends Extra {
 	public Fries(){
