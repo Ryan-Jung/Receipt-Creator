@@ -1,34 +1,30 @@
 package menu.items.rj;
 
 import java.math.BigDecimal;
+/**
+ * All items or products that need to be displayed on the receipt should implement this
+ * interface.
+ *
+ */
+public interface Item {
 
-public abstract class Item {
-	protected String name;
-	protected BigDecimal price;
-	protected int calories;
 	/**
 	 * 
 	 * @return- The name of this product.
 	 */
-	public String getName(){
-		return name.toUpperCase();
-	}
+	public String getName();
 	/**
 	 * 
 	 * @return - The price of this product.
 	 */
-	public BigDecimal getPrice(){
-		return price;
-	}
+	public BigDecimal getPrice();
 	/**
 	 * 
 	 * @return- The amount of calories this product has.
 	 */
-	public int getCalories(){
-		return calories;
-	}
+	public int getCalories();
 	/**
-	 * Prints the facts about the product.
+	 * Returns a string containing the facts about the product.
 	 */
-	public abstract void printFacts();
+	public String getFacts();
 }
