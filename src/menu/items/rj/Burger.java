@@ -4,35 +4,24 @@ import java.math.BigDecimal;
 
 
 public class Burger implements Item {
-
-	public Burger(){
-//		this.name = "Burger";
-//		this.price = BigDecimal.valueOf(4.50);
-//		this.calories = 1000;
-	}
+	private static final String NAME = "BURGER";
+	private static final BigDecimal PRICE = BigDecimal.valueOf(4.50);
+	private static final int CALORIES = 670;
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return NAME;
 	}
 
 	@Override
 	public BigDecimal getPrice() {
-		// TODO Auto-generated method stub
-		return null;
+		return PRICE;
 	}
 
 	@Override
 	public int getCalories() {
-		// TODO Auto-generated method stub
-		return 0;
+		return CALORIES;
 	}
 
-	@Override
-	public String getFacts() {
-		// TODO Auto-generated method stub
-		return null;
-	}	
-	
+
 }

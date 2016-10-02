@@ -23,8 +23,4 @@ public interface Item {
 	 * @return- The amount of calories this product has.
 	 */
 	public int getCalories();
-	/**
-	 * Returns a string containing the facts about the product.
-	 */
-	public String getFacts();
 }

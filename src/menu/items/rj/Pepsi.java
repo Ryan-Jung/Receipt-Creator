@@ -27,10 +27,6 @@ public class Pepsi implements Item {
 		return 0;
 	}
 
-	@Override
-	public String getFacts() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 	
 }

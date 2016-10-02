@@ -3,33 +3,26 @@ package menu.items.rj;
 import java.math.BigDecimal;
 
 public class Burrito implements Item {
-	public Burrito(){
-//		this.name = "BURRITO";
-//		this.calories = 750;
-//		this.price = BigDecimal.valueOf(3.99);
-	}
+	
+	private static final String NAME = "BURRIOT";
+	private static final BigDecimal PRICE = BigDecimal.valueOf(3.99);
+	private static final int CALORIES = 550;
+	
 
 	@Override
 	public String getName() {
-		// TODO Auto-generated method stub
-		return null;
+		return NAME;
 	}
 
 	@Override
 	public BigDecimal getPrice() {
-		// TODO Auto-generated method stub
-		return null;
+		return PRICE;
 	}
 
 	@Override
 	public int getCalories() {
-		// TODO Auto-generated method stub
-		return 0;
+		return CALORIES;
 	}
 
-	@Override
-	public String getFacts() {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 }

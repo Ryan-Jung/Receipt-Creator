@@ -9,25 +9,28 @@ import io.github.lukehutch.fastclasspathscanner.FastClasspathScanner;
 import io.github.lukehutch.fastclasspathscanner.scanner.ScanResult;
 
 public class ItemFactory {
+	
 	private static final String PACKAGE_PREFIX = "menu.items.rj";
 	private static HashMap<String, Item> itemHM = new HashMap<String, Item>();
+	
+	
 	/**
 	 * Gets all Items in a given package and puts them into a HashMap. The key
 	 * is the simple class name to lower case and the value stored in the HashMap is 
 	 * an instance of that Item.
 	 */
 	public void loadHashMap() {
-		//Get all subclasses of MainCourse in 'menu.items.rj.maincoursemeals'
-		ScanResult scanResult = new FastClasspathScanner(PACKAGE_PREFIX).scan();
-		List<String> subclasses = scanResult.getNamesOfSubclassesOf(Item.class.getName());
 		
-		for(String item : subclasses){
+		//Get all concrete classes implementing the Item interface in menu.rj.item
+		ScanResult scanResult = new FastClasspathScanner(PACKAGE_PREFIX).scan();
+		List<String> implementers = scanResult.getNamesOfClassesImplementing(Item.class);
+		
+		for(String item : implementers){
 			Class<?> ItemClass;
 			try {
 				ItemClass = Class.forName(item);
-				String productName = ItemClass.getSimpleName();
-				itemHM.put(productName, (Item) ItemClass.newInstance());
-				
+				String productName = ItemClass.getSimpleName().toLowerCase();
+				itemHM.put(productName, (Item) ItemClass.newInstance());	
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			} catch (InstantiationException e) {
@@ -56,27 +59,28 @@ public class ItemFactory {
 	 * exist.
 	 */
 	public Item makeProduct(String product) {
-		return null;
+		product = product.toLowerCase().replaceAll("\\s+", "");
+		return itemHM.get(product);
 	}
 	
-	/**
-	 * Takes in a a class's fully qualified name and returns the class name. For example if the class 
-	 * path name is menu.items.rj.Drinks.Coke this method would return 'coke'.
-	 * @param fullyQualifiedName
-	 * @return - The name of the class to lower case.
-	 */
-	public String getNameOfProduct(String fullyQualifiedName){
-		Stack<Character> charStack = new Stack<Character>();
-		int i = fullyQualifiedName.length()-1;
-		while(fullyQualifiedName.charAt(i) != '.'){
-			charStack.push(fullyQualifiedName.charAt(i));
-			i--;
-		}
-		String productName = "";
-		while(!charStack.isEmpty()){
-			productName += charStack.pop();
-		}
-		return productName.toLowerCase();
-	}
+//	/**
+//	 * Takes in a a class's fully qualified name and returns the class name. For example if the class 
+//	 * path name is menu.items.rj.Drinks.Coke this method would return 'coke'.
+//	 * @param fullyQualifiedName
+//	 * @return - The name of the class to lower case.
+//	 */
+//	public String getNameOfProduct(String fullyQualifiedName){
+//		Stack<Character> charStack = new Stack<Character>();
+//		int i = fullyQualifiedName.length()-1;
+//		while(fullyQualifiedName.charAt(i) != '.'){
+//			charStack.push(fullyQualifiedName.charAt(i));
+//			i--;
+//		}
+//		String productName = "";
+//		while(!charStack.isEmpty()){
+//			productName += charStack.pop();
+//		}
+//		return productName.toLowerCase();
+//	}
 	
 }
