@@ -2,4 +2,4 @@
 Creates receipts for food you order
 
 #Diagram of how it works
-![alt tag](http://imgur.com/uyDRGah)
+![alt tag](http://i.imgur.com/uyDRGah.png)
