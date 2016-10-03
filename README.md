@@ -6,16 +6,16 @@ Creates receipts for food you order
 
 
 #To add new products
-Create a new class like so
+####Create a new class like so
 ```
 package menu.items.rj;
 
 import java.math.BigDecimal;
 
 public class ExampleItem extends Item{
- //
+ 
  public ExampleItem(){
-    super(String "NAME", int Calories, BigDecimal Price )
+    super(String "NAME", int Calories, BigDecimal Price );
   }
 }
 ```
