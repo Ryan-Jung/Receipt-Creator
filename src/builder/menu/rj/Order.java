@@ -126,7 +126,7 @@ public class Order {
 			totalPrice = totalPrice.add(item.getPrice());
 			totalCalories += item.getCalories();
 		}
-		System.out.printf("%-13s %-17s %-12s", "", "Total: " + totalPrice, "Calories: " + totalCalories);
+		System.out.printf("%n%-20s %-20s %-20s",  "Total:" , totalPrice, totalCalories);
 	}
 	/**
 	 * Prints all the items that can be made by the item factory.
