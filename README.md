@@ -2,6 +2,7 @@
 Creates receipts for food you order
 
 [**Sample Program**](https://github.com/Ryan-Jung/Receipt-Creator/blob/master/src/SampleProgram.java)
+
 [**REQUIRES THE FAST-CLASSPATH-SCANNER**](https://github.com/lukehutch/fast-classpath-scanner)
 
 #Diagram of how it works
